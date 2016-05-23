@@ -13,7 +13,10 @@ RUN \
   && (curl https://bootstrap.pypa.io/get-pip.py | python3)
 
 # Install Python packages
-RUN \
-  pip3 install elasticsearch pyaml docker-compose
+RUN pip3 install elasticsearch pyaml docker-compose docopt
+
+# Install Jenkins Plugins
+COPY plugins.txt /usr/share/jenkins/
+RUN /usr/local/bin/plugins.sh /usr/share/jenkins/plugins.txt
 
 USER jenkins
