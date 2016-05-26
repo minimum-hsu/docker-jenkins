@@ -14,7 +14,7 @@ cloudbees-credentials
 cloudbees-folder
 conditional-buildstep
 copyartifact
-credentials
+credentials:1.28
 custom-tools-plugin
 cvs
 diskcheck
